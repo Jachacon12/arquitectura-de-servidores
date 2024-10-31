@@ -1,6 +1,6 @@
 const app = require('./server');
-const port = process.env.PORT || 3000;
+const { startServer } = require('./config/server.config');
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+if (require.main === module) {
+  startServer(app).catch((error) => console.error(error));
+}

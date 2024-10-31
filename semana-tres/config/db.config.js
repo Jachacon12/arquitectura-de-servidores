@@ -1,32 +1,29 @@
 const mongoose = require('mongoose');
-const MongoMemoryServer = require('mongodb-memory-server').MongoMemoryServer;
+const { MongoMemoryServer } = require('mongodb-memory-server');
+const Citation = require('../models/citation.model');
 const mockCitations = require('../mockData/citationData');
 
-async function startServer() {
-  const mongod = await MongoMemoryServer.create();
+let mongod;
+
+async function connectDB() {
+  mongod = await MongoMemoryServer.create();
   const uri = mongod.getUri();
 
   await mongoose.connect(uri, {
-    dbName: 'citationsDB',
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
   });
-  console.log('Connected to Database');
 
-  const db = mongoose.connection;
-  await db.collection('citations').insertMany(mockCitations);
+  // Insert mock data
+  await Citation.insertMany(mockCitations);
   console.log('Mock data inserted');
-
-  process.on('SIGINT', async () => {
-    await mongoose.connection.close();
-    console.log('Connection to MongoDB closed');
-    await mongod.stop();
-    console.log('Server stopped');
-    process.exit(0);
-  });
-
-  return mongod; // Return the mongod instance for potential use outside this function
 }
 
-startServer().catch((error) => {
-  console.error('Failed to start server:', error);
-  process.exit(1);
-});
+async function disconnectDB() {
+  await mongoose.disconnect();
+  if (mongod) {
+    await mongod.stop();
+  }
+}
+
+module.exports = { connectDB, disconnectDB };
