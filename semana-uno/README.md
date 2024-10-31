@@ -86,3 +86,19 @@ The server port is determined by the `NODE_ENV` environment variable:
 
 - Development: Port 3000 (default)
 - Production: Port 8000
+
+## Testing
+
+This project uses Supertest for API testing. To run the tests:
+
+```
+npm test
+```
+
+To run tests with coverage:
+
+```
+npm run test:coverage
+```
+
+> Note: These are primarily API and integration tests, not unit tests. They test the behavior of the API endpoints and the integration of various components.

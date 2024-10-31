@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const employeesRouter = require('./routes/employees');
 
 /**
  * @typedef {import('express').Request} Request
@@ -30,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));
  * @route {POST} /api/employees
  * @apiDescription Add a new employee
  */
-app.use('/api/employees', require('./routes/employees.js'));
+app.use('/api/employees', employeesRouter);
 
 /**
  * Middleware to handle CORS
@@ -73,6 +74,38 @@ app.get('/', (req, res) => {
 /**
  * Start the Express server
  */
-app.listen(port, () => {
-  console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode on http://localhost:${port}`);
-});
+let server;
+
+const startServer = () => {
+  return new Promise((resolve, reject) => {
+    server = app.listen(port, () => {
+      const actualPort = server.address().port;
+      console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode on http://localhost:${actualPort}`);
+      resolve(server);
+    });
+
+    server.on('error', (err) => {
+      reject(err);
+    });
+  });
+};
+
+const stopServer = () => {
+  return new Promise((resolve) => {
+    if (server) {
+      server.close(() => {
+        console.log('Server stopped');
+        resolve();
+      });
+    } else {
+      resolve();
+    }
+  });
+};
+
+// Only start the server if this file is run directly (not required as a module)
+if (require.main === module) {
+  const port = process.env.NODE_ENV === 'production' ? 8000 : 3000;
+  startServer(port);
+}
+module.exports = { app, startServer, stopServer };
