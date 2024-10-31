@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node start.js",
+    "start": "NODE_ENV=production node start.js",
     "dev": "nodemon start.js",
     "test": "jest --detectOpenHandles --forceExit"
   },
