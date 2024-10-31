@@ -9,7 +9,7 @@ router.post('/users', usersController.createUser);
 router.post('/login', usersController.loginUser);
 
 // Protected routes
-router.use(authMiddleware);
+router.use('/citations', authMiddleware);
 
 router.post('/citations', citationsController.createCitation);
 router.get('/citations', citationsController.getAllCitations);
