@@ -1,26 +1,38 @@
 /**
- * Middleware function for authentication using JWT.
- * Verifies the presence and validity of a JWT in the request headers.
+ * Middleware function for JWT authentication.
+ * Verifies the presence and validity of a JWT token in the request header.
  *
  * @param {Object} req - Express request object.
  * @param {Object} res - Express response object.
  * @param {Function} next - Express next middleware function.
- * @returns {void}
- * @throws {Object} Returns a 401 status with an error message if authentication fails.
+ * @returns {void} Calls next() if authentication is successful, otherwise sends a 401 response.
  */
-module.exports = (req, res, next) => {
-  const authHeader = req.headers.authorization;
+const jwt = require('jsonwebtoken');
+
+module.exports = function (req, res, next) {
+  // Get token from header
+  const authHeader = req.header('Authorization');
+  console.log('Auth Header:', authHeader); // Add this line
 
   if (!authHeader) {
-    return res.status(401).json({ message: 'No token provided' });
+    return res.status(401).json({ message: 'No Authorization header, authorization denied' });
   }
 
-  const token = authHeader.split(' ')[1]; // Bearer <token>
+  const token = authHeader.split(' ')[1];
+  console.log('Extracted Token:', token); // Add this line
+  // Check if no token
+  if (!token) {
+    return res.status(401).json({ message: 'No token, authorization denied' });
+  }
+
+  // Verify token
   try {
     const decoded = jwt.verify(token, process.env.JWT_ACCESS_SECRET);
-    req.userData = { userId: decoded.userId };
+    console.log('Decoded Token:', decoded); // Add this line
+    req.user = decoded.user;
     next();
-  } catch (error) {
-    return res.status(401).json({ message: 'Authentication failed' });
+  } catch (err) {
+    console.error('Token verification failed:', err);
+    res.status(401).json({ message: 'Token is not valid' });
   }
 };
