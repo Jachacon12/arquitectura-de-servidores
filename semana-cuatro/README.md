@@ -7,6 +7,7 @@ This project is a Node.js application that provides a CRUD API for managing cita
 ## Features
 
 - Create, read, update, and delete citations
+- User registration with email verification
 - User authentication and authorization
 - CRUD API design
 - MongoDB integration using Mongoose ODM
@@ -24,7 +25,7 @@ This project is a Node.js application that provides a CRUD API for managing cita
 
 ```
 git clone https://github.com/Jachacon12/arquitectura-de-servidores.git
-cd semana-tres
+cd semana-cuatro
 ```
 
 2. Install dependencies:
@@ -38,12 +39,9 @@ npm install
 
 ```
 NODE_ENV=development
-MONGODB_URI=<your-mongodb-connection-string>
-
-NODE_ENV=development
 PORT=3000
-JWT_ACCESS_SECRET=<your-access-token-string>
-JWT_REFRESH_SECRET=<your-refresh-token-string>
+JWT_ACCESS_SECRET=<your-access-token-secret>
+JWT_REFRESH_SECRET=<your-refresh-token-secret>
 ```
 
 ## Running the Application
@@ -66,8 +64,9 @@ The server will start on `http://localhost:3000` for development and `http://loc
 
 ### Public Routes
 
-- `POST /api/users`: Create a new user
-- `POST /api/login`: User login
+- `POST /api/users`: Create a new user (sends verification email)
+- `GET /api/verify/:token`: Verify user email
+- `POST /api/login`: User login (requires verified email)
 
 ### Protected Routes (require authentication)
 
@@ -92,6 +91,7 @@ npm test
 - `models/`: MongoDB schema definitions
 - `controllers/`: Logic for handling requests
 - `middleware/`: Custom middleware (e.g., authentication)
+- `routes/`: API route definitions
 - `tests/`: Test files
 
 ## License
