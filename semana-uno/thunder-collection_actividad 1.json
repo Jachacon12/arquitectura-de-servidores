@@ -1,0 +1,169 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "actividad 1",
+    "collectionId": "e926208e-f234-424f-8aa3-601300024bed",
+    "dateExported": "2024-11-01T00:40:37.697Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "52864dda-26f0-43ac-b793-a943a3580e4e",
+            "colId": "e926208e-f234-424f-8aa3-601300024bed",
+            "containerId": "",
+            "name": "Get all employees",
+            "url": "http://localhost:3000/api/employees",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-10-30T23:21:40.204Z",
+            "modified": "2024-10-30T23:21:51.612Z",
+            "headers": []
+        },
+        {
+            "_id": "53582dbe-32c1-44c8-a422-4168c6925217",
+            "colId": "e926208e-f234-424f-8aa3-601300024bed",
+            "containerId": "",
+            "name": "Employees page 1",
+            "url": "http://localhost:3000/api/employees?page=1",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-10-30T23:24:22.505Z",
+            "modified": "2024-10-30T23:25:34.818Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "cb18d910-4224-42d9-b78d-7bfd4fd63d0f",
+            "colId": "e926208e-f234-424f-8aa3-601300024bed",
+            "containerId": "",
+            "name": "Employees page 2",
+            "url": "http://localhost:3000/api/employees?page=2",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-10-30T23:24:49.698Z",
+            "modified": "2024-10-30T23:25:39.470Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "d1e585a3-4100-48d1-88c2-13b9c515b7dc",
+            "colId": "e926208e-f234-424f-8aa3-601300024bed",
+            "containerId": "",
+            "name": "Oldest employee",
+            "url": "http://localhost:3000/api/employees/oldest",
+            "method": "GET",
+            "sortNum": 27500,
+            "created": "2024-10-30T23:22:30.824Z",
+            "modified": "2024-10-30T23:30:43.153Z",
+            "headers": []
+        },
+        {
+            "_id": "b6c73a39-b734-4fe3-aa75-a7c0d7c2e200",
+            "colId": "e926208e-f234-424f-8aa3-601300024bed",
+            "containerId": "",
+            "name": "Privilege users",
+            "url": "http://localhost:3000/api/employees?user=true",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-10-30T23:24:25.608Z",
+            "modified": "2024-10-30T23:31:15.396Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "user",
+                    "value": "true",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "dcfc8e08-ea2f-4a3f-abdd-1ded1fc52bd3",
+            "colId": "e926208e-f234-424f-8aa3-601300024bed",
+            "containerId": "",
+            "name": "Black badges",
+            "url": "http://localhost:3000/api/employees?badges=black",
+            "method": "GET",
+            "sortNum": 35000,
+            "created": "2024-10-30T23:28:07.935Z",
+            "modified": "2024-10-30T23:31:56.159Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "badges",
+                    "value": "black",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "fad2d84f-5228-49b1-99be-586196a9229d",
+            "colId": "e926208e-f234-424f-8aa3-601300024bed",
+            "containerId": "",
+            "name": "Get employee by name",
+            "url": "http://localhost:3000/api/employees/sue",
+            "method": "GET",
+            "sortNum": 37500,
+            "created": "2024-10-30T23:29:33.101Z",
+            "modified": "2024-10-30T23:35:31.846Z",
+            "headers": []
+        },
+        {
+            "_id": "0a3a7d3b-fe2b-44c2-97a1-27664ce4f393",
+            "colId": "e926208e-f234-424f-8aa3-601300024bed",
+            "containerId": "",
+            "name": "Bad request - employee by name",
+            "url": "http://localhost:3000/api/employees/shakira",
+            "method": "GET",
+            "sortNum": 38750,
+            "created": "2024-10-30T23:33:27.510Z",
+            "modified": "2024-10-30T23:35:48.926Z",
+            "headers": []
+        },
+        {
+            "_id": "ffaf5dd7-ea41-4058-a1f1-0c2b4472671a",
+            "colId": "e926208e-f234-424f-8aa3-601300024bed",
+            "containerId": "",
+            "name": "Post new employee",
+            "url": "http://localhost:3000/api/employees",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-10-30T23:27:29.670Z",
+            "modified": "2024-10-30T23:29:16.962Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"Jorge\",\n    \"age\": 30,\n    \"phone\": {\n      \"personal\": \"555-123-123\",\n      \"work\": \"555-456-456\",\n      \"ext\": \"2342\"\n    },\n    \"privileges\": \"user\",\n    \"favorites\": {\n      \"artist\": \"Picasso\",\n      \"food\": \"pizza\"\n    },\n    \"finished\": [\n      17,\n      3\n    ],\n    \"badges\": [\n      \"blue\",\n      \"black\"\n    ],\n    \"points\": [\n      {\n        \"points\": 85,\n        \"bonus\": 20\n      },\n      {\n        \"points\": 85,\n        \"bonus\": 10\n      }\n    ]\n  }",
+                "form": []
+            }
+        },
+        {
+            "_id": "5d8db82f-2900-45a0-b1a3-cccd7d3834bc",
+            "colId": "e926208e-f234-424f-8aa3-601300024bed",
+            "containerId": "",
+            "name": "Bad request - new employee",
+            "url": "http://localhost:3000/api/employees",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-10-30T23:36:09.707Z",
+            "modified": "2024-10-30T23:36:43.893Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"age\": 30,\n    \"phone\": {\n      \"personal\": \"555-123-123\",\n      \"work\": \"555-456-456\",\n      \"ext\": \"2342\"\n    },\n    \"privileges\": \"user\",\n    \"favorites\": {\n      \"artist\": \"Picasso\",\n      \"food\": \"pizza\"\n    },\n    \"finished\": [\n      17,\n      3\n    ],\n    \"badges\": [\n      \"blue\",\n      \"black\"\n    ],\n    \"points\": [\n      {\n        \"points\": 85,\n        \"bonus\": 20\n      },\n      {\n        \"points\": 85,\n        \"bonus\": 10\n      }\n    ]\n  }",
+                "form": []
+            }
+        }
+    ],
+    "ref": "4Gm-yfZlCGmTtfuJMdP4K3EC9l5sHfQojkG5tfL-qetBjdIm1S8EjMA6VvPc63hqzlk4yg4fhr6EWcXjgMW6vQ"
+}
