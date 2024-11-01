@@ -1,0 +1,57 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "actividad 4",
+    "collectionId": "a1c2ca16-f494-4af7-a891-e84792223eb5",
+    "dateExported": "2024-11-01T00:41:53.597Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c08b063e-6f7f-4b6e-ae7f-c9612c88ad05",
+            "colId": "a1c2ca16-f494-4af7-a891-e84792223eb5",
+            "containerId": "",
+            "name": "Create user and send email",
+            "url": "http://localhost:3000/api/users",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-10-31T23:12:27.258Z",
+            "modified": "2024-10-31T23:15:38.617Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Jonas Doe\",\n  \"email\":\"donJonas@gmail.com\",\n  \"password\": \"12345cuatro\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "932bad59-ca33-4963-bd95-62bd46acb88e",
+            "colId": "a1c2ca16-f494-4af7-a891-e84792223eb5",
+            "containerId": "",
+            "name": "Verify user",
+            "url": "http://localhost:3000/api/users/verify/5900ab25639938b16a05704c28cceb17be003a56",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-10-31T23:12:43.873Z",
+            "modified": "2024-11-01T00:17:16.023Z",
+            "headers": []
+        },
+        {
+            "_id": "66c64998-95be-41cc-84e2-0b3fe8ab1b4f",
+            "colId": "a1c2ca16-f494-4af7-a891-e84792223eb5",
+            "containerId": "",
+            "name": "User login",
+            "url": "http://localhost:3000/api/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-10-31T23:16:15.291Z",
+            "modified": "2024-10-31T23:16:37.266Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"donJonas@gmail.com\",\n  \"password\": \"12345cuatro\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "oLcY7tpA2g-USiVE4bUS0eBWxIzkuXQS3WyOGMca-0T9xzMVCol8mb5lzIZwLdPYhYNF9mBojOnWqV4fgDWfMQ"
+}

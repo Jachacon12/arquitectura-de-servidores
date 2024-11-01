@@ -1,0 +1,120 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "actividad 3",
+    "collectionId": "2955f418-53cf-47a8-839a-b19c7a5f8313",
+    "dateExported": "2024-11-01T00:42:11.965Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "fa05366d-6083-4f78-9fe6-e3689be1cff8",
+            "colId": "2955f418-53cf-47a8-839a-b19c7a5f8313",
+            "containerId": "",
+            "name": "Create user",
+            "url": "http://localhost:3000/api/users",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-10-29T00:08:18.905Z",
+            "modified": "2024-10-31T19:39:42.844Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Jonas Doe\",\n  \"email\":\"donJonas@gmail.com\",\n  \"password\": \"12345cuatro\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "5eead46c-776c-4694-b8b6-ced7e7b2575e",
+            "colId": "2955f418-53cf-47a8-839a-b19c7a5f8313",
+            "containerId": "",
+            "name": "User Login",
+            "url": "http://localhost:3000/api/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-10-29T00:22:51.686Z",
+            "modified": "2024-10-31T22:48:09.969Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "",
+                    "isDisabled": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"donJonas@gmail.com\",\n  \"password\": \"12345cuatro\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "0fda662e-1364-4b98-88d1-e35ff99cd78b",
+            "colId": "2955f418-53cf-47a8-839a-b19c7a5f8313",
+            "containerId": "",
+            "name": "Authenticated get request",
+            "url": "http://localhost:3000/api/citations",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-10-29T17:21:21.111Z",
+            "modified": "2024-10-31T22:48:43.993Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjcyNDA5MTc2ZTdkZjk0MTZlODI2NDNmIn0sImlhdCI6MTczMDQxNDg5MSwiZXhwIjoxNzMwNDE4NDkxfQ.wvMhtJ-QqEqAwKiMkgGXFJGjgACHdvshzD1DZhD5NPI"
+            }
+        },
+        {
+            "_id": "3e2ba0c4-da29-4e4e-8a37-54f17a74ae61",
+            "colId": "2955f418-53cf-47a8-839a-b19c7a5f8313",
+            "containerId": "",
+            "name": "Authenticated get by id",
+            "url": "http://localhost:3000/api/citations/6724090a6e7df9416e826436",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-10-31T19:22:27.647Z",
+            "modified": "2024-10-31T22:52:14.756Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjcyNDA5MTc2ZTdkZjk0MTZlODI2NDNmIn0sImlhdCI6MTczMDQxNDg5MSwiZXhwIjoxNzMwNDE4NDkxfQ.wvMhtJ-QqEqAwKiMkgGXFJGjgACHdvshzD1DZhD5NPI"
+            }
+        },
+        {
+            "_id": "8d23f4ad-59dd-4842-aec7-1110f4b0dc8e",
+            "colId": "2955f418-53cf-47a8-839a-b19c7a5f8313",
+            "containerId": "",
+            "name": "Update citation",
+            "url": "http://localhost:3000/api/citations/6724090a6e7df9416e826436",
+            "method": "PATCH",
+            "sortNum": 50000,
+            "created": "2024-10-31T19:23:54.855Z",
+            "modified": "2024-10-31T22:52:30.924Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"year\": 2026\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjcyNDA5MTc2ZTdkZjk0MTZlODI2NDNmIn0sImlhdCI6MTczMDQxNDg5MSwiZXhwIjoxNzMwNDE4NDkxfQ.wvMhtJ-QqEqAwKiMkgGXFJGjgACHdvshzD1DZhD5NPI"
+            }
+        },
+        {
+            "_id": "26ca21e3-1977-49c4-8503-f1be7f6af776",
+            "colId": "2955f418-53cf-47a8-839a-b19c7a5f8313",
+            "containerId": "",
+            "name": "Delete citation",
+            "url": "http://localhost:3000/api/citations/6723d8cbfc8d1db402f1c15f",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-10-31T19:24:59.531Z",
+            "modified": "2024-10-31T19:25:17.248Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzIzZDhjZGZjOGQxZGI0MDJmMWMxNjciLCJpYXQiOjE3MzA0MDI1MDksImV4cCI6MTczMDQwMzQwOX0.w7AEVZir6VI8Un16w8_Bn5MDsHNltVjTx_qw1H44S3k"
+            }
+        }
+    ],
+    "ref": "y3LfMYVU7t3tERBh5QE6nStO4er2-sBKxQtKt7NWvyFtjvlVgKLyUU8AEe_Nk8Eez8l5m_XSOoftkoPa0XzJaQ"
+}
